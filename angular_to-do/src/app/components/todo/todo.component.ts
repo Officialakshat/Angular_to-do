@@ -19,6 +19,7 @@ export class TodoComponent {
       this.newTask = '';
     }
   }
+ 
 
   deleteTask(task: any) {
     this.tasks = this.tasks.filter(t => t !== task);
