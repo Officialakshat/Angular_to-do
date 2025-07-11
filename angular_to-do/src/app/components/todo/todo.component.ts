@@ -13,23 +13,24 @@ export class TodoComponent {
   newTask: string = '';
   tasks: { name: string; completed: boolean }[] = [];
 
-  addTask() {
-    if (this.newTask.trim()) {
-      this.tasks.push({ name: this.newTask, completed: false });
-      this.newTask = '';
-    }
-  }
- 
-
-  deleteTask(task: any) {
-    this.tasks = this.tasks.filter(t => t !== task);
-  }
-
-   ngOnInit() {
+  ngOnInit() {
     const data = localStorage.getItem('tasks');
     if (data) {
       this.tasks = JSON.parse(data);
     }
+  }
+
+  addTask() {
+    if (this.newTask.trim()) {
+      this.tasks.push({ name: this.newTask, completed: false });
+      this.saveTasks();
+      this.newTask = '';
+    }
+  }
+
+  deleteTask(task: any) {
+    this.tasks = this.tasks.filter(t => t !== task);
+    this.saveTasks();
   }
 
   saveTasks() {
