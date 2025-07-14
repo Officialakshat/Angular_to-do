@@ -1,18 +1,33 @@
-
-  
-
- <div class="flex justify-center mt-16 px-4">
+<div class="flex justify-center mt-16 px-4">
      <input class="outline-0 mt-6 w-96 bg-slate-200 shadow-xl    rounded-l-4xl pl-4 h-12" [(ngModel)]="newTask" placeholder="Add New Note" />
   <button class="h-12 mt-6  w-20 bg-orange-500 text-amber-50 rounded-r-3xl  shadow-xl" (click)="addTask()">Add</button>
 
  </div>
  <div class="flex justify-center mt-10 ">
    <ul class=" w-full mx-6">
-    <li *ngFor="let task of tasks" class="flex justify-center ">
-    <div class="py-4 border-2 w-1/2 border-slate-200 px-3 bg-slate-200 rounded-2xl shadow-xl flex justify-between"> 
-      <span class=" text-xl  text-slate-600  " [class.completed]="task.completed">{{ task.name }}</span>
-      <button (click)="deleteTask(task)" class=" max-h-10 max-w-24 py-2 px-6 rounded-2xl text-white    bg-orange-500 ">Delete</button></div>
-    </li>
+    <li *ngFor="let task of tasks; let i = index" class="flex justify-center">
+  <div class="py-4 border-2 w-1/2 border-slate-200 px-3 bg-slate-200 rounded-2xl shadow-xl flex justify-between items-center">
+    <span 
+      class="text-xl text-slate-600"
+      [class.line-through]="task.completed"
+      [class.text-green-600]="task.read"
+    >
+      <ng-container *ngIf="editIndex !== i; else editTpl">{{ task.name }}</ng-container>
+      <ng-template #editTpl>
+        <input [(ngModel)]="editTaskName" class="border px-2 py-1 rounded" />
+      </ng-template>
+    </span>
+    <div class="flex gap-2">
+      <button *ngIf="editIndex !== i" (click)="startEdit(i)" class="px-3 py-1 bg-orange-500 text-white rounded">Edit</button>
+      <button *ngIf="editIndex === i" (click)="saveEdit(i)" class="px-3 py-1 bg-orange-500 text-white rounded">Save</button>
+      <button *ngIf="editIndex === i" (click)="cancelEdit()" class="px-3 py-1 bg-gray-400 text-white rounded">Cancel</button>
+      <button (click)="markAsRead(task)" [disabled]="task.read" class="px-3 py-1 bg-orange-500 text-white rounded">
+        {{ task.read ? 'Read' : 'Mark as Read' }}
+      </button>
+      <button (click)="deleteTask(task)" class="px-3 py-1 bg-orange-500 text-white rounded">Delete</button>
+    </div>
+  </div>
+</li>
   </ul>
  </div>
 

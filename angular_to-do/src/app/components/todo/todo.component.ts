@@ -11,7 +11,9 @@ import { FormsModule } from '@angular/forms';
 })
 export class TodoComponent {
   newTask: string = '';
-  tasks: { name: string; completed: boolean }[] = [];
+  tasks: { name: string; completed: boolean; read?: boolean }[] = [];
+  editIndex: number | null = null;
+  editTaskName: string = '';
 
   ngOnInit() {
     const data = localStorage.getItem('tasks');
@@ -35,6 +37,30 @@ export class TodoComponent {
 
   saveTasks() {
     localStorage.setItem('tasks', JSON.stringify(this.tasks));
+  }
+
+  startEdit(index: number) {
+    this.editIndex = index;
+    this.editTaskName = this.tasks[index].name;
+  }
+
+  saveEdit(index: number) {
+    if (this.editTaskName.trim()) {
+      this.tasks[index].name = this.editTaskName;
+      this.saveTasks();
+      this.editIndex = null;
+      this.editTaskName = '';
+    }
+  }
+
+  cancelEdit() {
+    this.editIndex = null;
+    this.editTaskName = '';
+  }
+
+  markAsRead(task: any) {
+    task.read = true;
+    this.saveTasks();
   }
 }
 
