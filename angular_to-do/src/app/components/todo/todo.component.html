@@ -14,14 +14,14 @@
     >
       <ng-container *ngIf="editIndex !== i; else editTpl">{{ task.name }}</ng-container>
       <ng-template #editTpl>
-        <input [(ngModel)]="editTaskName" class="border px-2 py-1 rounded" />
+        <input [(ngModel)]="editTaskName" class="border border-slate-400 px-2 py-1 rounded outline-0" />
       </ng-template>
     </span>
-    <div class="flex gap-2">
-      <button *ngIf="editIndex !== i" (click)="startEdit(i)" class="px-3 py-1 bg-orange-500 text-white rounded">Edit</button>
+    <div class="flex gap-2 max-h-12">
+      <button *ngIf="editIndex !== i" (click)="startEdit(i)" class="px-3 py-1 bg-orange-500 text-white rounded ">Edit</button>
       <button *ngIf="editIndex === i" (click)="saveEdit(i)" class="px-3 py-1 bg-orange-500 text-white rounded">Save</button>
       <button *ngIf="editIndex === i" (click)="cancelEdit()" class="px-3 py-1 bg-gray-400 text-white rounded">Cancel</button>
-      <button (click)="markAsRead(task)" [disabled]="task.read" class="px-3 py-1 bg-orange-500 text-white rounded">
+      <button (click)="markAsRead(task)" [disabled]="task.read" class="px-3 py-1 bg-orange-500 text-white rounded ">
         {{ task.read ? 'Read' : 'Mark as Read' }}
       </button>
       <button (click)="deleteTask(task)" class="px-3 py-1 bg-orange-500 text-white rounded">Delete</button>
