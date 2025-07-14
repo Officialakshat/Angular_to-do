@@ -18,13 +18,13 @@
       </ng-template>
     </span>
     <div class="flex gap-2 max-h-12">
-      <button *ngIf="editIndex !== i" (click)="startEdit(i)" class="px-3 py-1 bg-orange-500 text-white rounded ">Edit</button>
+      <button *ngIf="editIndex !== i" (click)="startEdit(i)" class="px-3 py-1 bg-orange-500 text-white rounded "><i class="fa-solid fa-pen-to-square"></i></button>
       <button *ngIf="editIndex === i" (click)="saveEdit(i)" class="px-3 py-1 bg-orange-500 text-white rounded">Save</button>
       <button *ngIf="editIndex === i" (click)="cancelEdit()" class="px-3 py-1 bg-gray-400 text-white rounded">Cancel</button>
-      <button (click)="markAsRead(task)" [disabled]="task.read" class="px-3 py-1 bg-orange-500 text-white rounded ">
+      <!-- <button (click)="markAsRead(task)" [disabled]="task.read" class="px-3 py-1 bg-orange-500 text-white rounded ">
         {{ task.read ? 'Read' : 'Mark as Read' }}
-      </button>
-      <button (click)="deleteTask(task)" class="px-3 py-1 bg-orange-500 text-white rounded">Delete</button>
+      </button> -->
+      <button (click)="deleteTask(task)" class="px-3 py-1 bg-orange-500 text-white rounded"><i class="fa-solid fa-trash-can "></i></button>
     </div>
   </div>
 </li>
