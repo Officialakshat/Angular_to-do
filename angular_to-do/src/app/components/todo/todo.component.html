@@ -4,17 +4,17 @@
 
  </div>
  <div class="flex justify-center mt-10 ">
-   <ul class=" w-full mx-6">
-    <li *ngFor="let task of tasks; let i = index" class="flex justify-center">
-  <div class="py-4 border-2 w-1/2 border-slate-200 px-3 bg-slate-200 rounded-2xl shadow-xl flex justify-between items-center">
+   <ul class=" w-full mx-6 ">
+    <li *ngFor="let task of tasks; let i = index" class="flex justify-center my-4">
+  <div class="py-4  w-1/2  px-3 rounded-2xl shadow-xl flex justify-between bg-slate-300 items-center">
     <span 
-      class="text-xl text-slate-600"
+      class="text-xl text-slate-600 "
       [class.line-through]="task.completed"
       [class.text-green-600]="task.read"
     >
       <ng-container *ngIf="editIndex !== i; else editTpl">{{ task.name }}</ng-container>
       <ng-template #editTpl>
-        <input [(ngModel)]="editTaskName" class="border border-slate-400 px-2 py-1  rounded outline-0" />
+        <input [(ngModel)]="editTaskName" class="border border-slate-400 px-2  my-4  rounded outline-0" />
       </ng-template>
     </span>
     <div class="flex gap-2 max-h-12">
