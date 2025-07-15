@@ -14,7 +14,7 @@
     >
       <ng-container *ngIf="editIndex !== i; else editTpl">{{ task.name }}</ng-container>
       <ng-template #editTpl>
-        <input [(ngModel)]="editTaskName" class="border border-slate-400 px-2 py-1 rounded outline-0" />
+        <input [(ngModel)]="editTaskName" class="border border-slate-400 px-2 py-1  rounded outline-0" />
       </ng-template>
     </span>
     <div class="flex gap-2 max-h-12">
