@@ -1,7 +1,21 @@
-<nav class="w-full bg-transparent p-8 h-screen flex flex-col content-between justify-between">
-  <span class="logo text-orange-500 text-4xl font-bold underline-offset-8 underline bg-transparent">TaskFlow</span>
+<nav class="w-full p-8 h-screen flex flex-col content-between bg-slate-100">
+  <span
+    class="logo text-orange-500 text-4xl font-bold underline-offset-8 underline bg-transparent"
+    >TaskFlow</span
+  >
   <div>
-    <i class="fa-solid fa-circle-half-stroke fa-xl cursor-pointer" (click)="toggleDarkMode()"></i>
+    <ul class="flex flex-col gap-4 text-lg font-semibold">
+      <li><a href="#">Notes</a></li>
+      <li><a href="#">Reminder</a></li>
+      <li><a href="#">Archieves</a></li>
+      <li>
+        <a href="#">
+          <i
+            class="fa-solid fa-circle-half-stroke fa-xl cursor-pointer"
+            (click)="toggleDarkMode()"
+          ></i>
+        </a>
+      </li>
+    </ul>
   </div>
 </nav>
-
