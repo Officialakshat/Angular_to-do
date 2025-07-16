@@ -1,15 +1,15 @@
 <div class="main_container flex ">
     <div class="sidebar w-1/5   h-screen fixed ">
-   <ul>
-   <li><a href="#"><app-header></app-header></a></li>
-   <li><a href="#"><app-reminder></app-reminder></a></li>
-   <li><a href="#"><app-archieve></app-archieve></a></li>
-   </ul>
+   
+   <app-header></app-header>
       
     </div>
     <div class="main_area w-full">
-      <app-todo></app-todo>
-
+      <ul>
+        <li><a href="#"><app-todo></app-todo></a></li>
+        <li><a href="#"><app-archieve></app-archieve></a></li>
+        <li><a href="#"><app-reminder></app-reminder></a></li>
+      </ul>
     </div>
 </div>
   <router-outlet></router-outlet>
