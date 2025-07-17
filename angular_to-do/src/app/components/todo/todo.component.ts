@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-todo',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, ],
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.css']
 })
@@ -29,6 +30,13 @@ export class TodoComponent {
       this.newTask = '';
     }
   }
+  
+  archiveTask(task: any) {
+  // Implement your archiving logic here
+  // For example, move the task to a separate array or set a property
+  task.archived = true;
+  this.saveTasks();
+}
 
   deleteTask(task: any) {
     this.tasks = this.tasks.filter(t => t !== task);
