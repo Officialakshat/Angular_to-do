@@ -9,7 +9,7 @@ import { ArchieveComponent } from './components/archieve/archieve.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent],
+  imports: [RouterOutlet, HeaderComponent, ArchieveComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
