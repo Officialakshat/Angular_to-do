@@ -1,23 +1,18 @@
-<nav class="w-full p-8 h-screen flex flex-col  content-between bg-slate-100">
+<nav class="w-full h-20  bg-amber-300  flex md:flex-col  ">
   <span
-    class="logo text-orange-500 text-4xl font-bold underline-offset-8 underline bg-transparent"
-    >TaskFlow</span
-  >
-  <div>
-    <ul class="flex flex-col gap-4 text-lg font-semibold my-20">
+    class="logo text-orange-500 text-xl sm:text-2xl md:text-4xl font-bold underline-offset-8 underline bg-transparent"
+    >TaskFlow</span>
+
+    <ul class="flex md:flex-col  md:text-lg font-semibold my-20">
       <li><a  routerLink="/notes"  routerLinkActive="active"><i class="fa-solid fa-note-sticky pr-2"></i>Notes</a></li>
       <li><a routerLink="/reminder"  routerLinkActive="active"><i class="fa-regular fa-bell pr-2"></i>Reminder</a></li>
       <li><a routerLink="/archieve"  routerLinkActive="active"><i class="fa-solid fa-box-archive pr-2"></i>Archieves</a></li>
-     
-    </ul>
-  </div>
-  <div>
-     
-        <a href="#">
+     <li> <a href="#">
           <i
             class="fa-solid fa-circle-half-stroke fa-xl cursor-pointer"
             (click)="toggleDarkMode()"
           ></i>
-        </a>
-  </div>
+        </a></li>
+    </ul>
+ 
 </nav>
