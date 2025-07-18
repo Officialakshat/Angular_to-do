@@ -32,29 +32,32 @@
   </ul>
 
 </nav> -->
- <nav class="flex w-fill h-24 bg-slate-200 justify-between px-4 items-center">
+ <nav class="flex w-full h-24 bg-slate-200 justify-between px-4 items-center">
   <div>
-    <span>
-      <h1 class="text-xl sm:text-2xl text-orange-500 font-bold  underline-offset-8 underline ">TaskFlow</h1>
-    </span>
+    <h1 class="text-xl sm:text-2xl text-orange-500 font-bold underline-offset-8 underline">TaskFlow</h1>
   </div>
-  <div>
-    <ul class="sm:flex hidden px-4">
-      <li> <a routerLink="/notes" routerLinkActive="active"
-        ><i class="fa-solid fa-note-sticky pr-1 px-4"></i>Notes</a
-      ></li>
-      <li> <a routerLink="/reminder" routerLinkActive="active"
-        ><i class="fa-regular fa-bell pr-1 px-4"></i>Reminder</a
-      ></li>
-      <li>  <a routerLink="/archieve" routerLinkActive="active"
-        ><i class="fa-solid fa-box-archive pr-1 px-4 "></i>Archieves</a
-      ></li>
-      <li> <a href="#">
-        <i
-          class="fa-solid fa-circle-half-stroke fa-xl cursor-pointer  px-4"
-          (click)="toggleDarkMode()"
-        ></i>
-      </a></li>
+  <!-- Hamburger Icon for small screens -->
+  <div class="sm:hidden">
+    <button (click)="showMenu = !showMenu" class="focus:outline-none">
+      <i class="fa-solid fa-bars fa-2xl"></i>
+    </button>
+    <!-- Dropdown Menu -->
+    <div *ngIf="showMenu" class="absolute right-4 top-20 bg-white shadow-lg rounded-lg z-50 w-48">
+      <ul class="flex flex-col p-4 gap-2">
+        <li><a routerLink="/notes" routerLinkActive="active"><i class="fa-solid fa-note-sticky pr-2"></i>Notes</a></li>
+        <li><a routerLink="/reminder" routerLinkActive="active"><i class="fa-regular fa-bell pr-2"></i>Reminder</a></li>
+        <li><a routerLink="/archieve" routerLinkActive="active"><i class="fa-solid fa-box-archive pr-2"></i>Archieves</a></li>
+        <li><a href="#"><i class="fa-solid fa-circle-half-stroke fa-xl cursor-pointer" (click)="toggleDarkMode()"></i></a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- Horizontal Menu for medium and larger screens -->
+  <div class="hidden sm:flex px-4">
+    <ul class="flex gap-6 items-center">
+      <li><a routerLink="/notes" routerLinkActive="active"><i class="fa-solid fa-note-sticky pr-1"></i>Notes</a></li>
+      <li><a routerLink="/reminder" routerLinkActive="active"><i class="fa-regular fa-bell pr-1"></i>Reminder</a></li>
+      <li><a routerLink="/archieve" routerLinkActive="active"><i class="fa-solid fa-box-archive pr-1"></i>Archieves</a></li>
+      <li><a href="#"><i class="fa-solid fa-circle-half-stroke fa-xl cursor-pointer" (click)="toggleDarkMode()"></i></a></li>
     </ul>
   </div>
-</nav> 
+</nav>

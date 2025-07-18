@@ -9,6 +9,8 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  showMenu = false;
+
   toggleDarkMode() {
     document.body.classList.toggle('dark');
   }
