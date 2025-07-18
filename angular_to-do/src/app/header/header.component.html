@@ -1,18 +1,60 @@
-<nav class="w-full h-20  bg-amber-300  flex md:flex-col  ">
-  <span
+<!-- <nav class=" bg-amber-300 flex md:flex-col">
+  <div
     class="logo text-orange-500 text-xl sm:text-2xl md:text-4xl font-bold underline-offset-8 underline bg-transparent"
-    >TaskFlow</span>
+    >TaskFlow</div
+  >
 
-    <ul class="flex md:flex-col  md:text-lg font-semibold my-20">
-      <li><a  routerLink="/notes"  routerLinkActive="active"><i class="fa-solid fa-note-sticky pr-2"></i>Notes</a></li>
-      <li><a routerLink="/reminder"  routerLinkActive="active"><i class="fa-regular fa-bell pr-2"></i>Reminder</a></li>
-      <li><a routerLink="/archieve"  routerLinkActive="active"><i class="fa-solid fa-box-archive pr-2"></i>Archieves</a></li>
-     <li> <a href="#">
-          <i
-            class="fa-solid fa-circle-half-stroke fa-xl cursor-pointer"
-            (click)="toggleDarkMode()"
-          ></i>
-        </a></li>
+  <ul class="flex md:flex-col md:text-lg font-semibold my-20">
+    <li>
+      <a routerLink="/notes" routerLinkActive="active"
+        ><i class="fa-solid fa-note-sticky pr-2"></i>Notes</a
+      >
+    </li>
+    <li>
+      <a routerLink="/reminder" routerLinkActive="active"
+        ><i class="fa-regular fa-bell pr-2"></i>Reminder</a
+      >
+    </li>
+    <li>
+      <a routerLink="/archieve" routerLinkActive="active"
+        ><i class="fa-solid fa-box-archive pr-2"></i>Archieves</a
+      >
+    </li>
+    <li>
+      <a href="#">
+        <i
+          class="fa-solid fa-circle-half-stroke fa-xl cursor-pointer"
+          (click)="toggleDarkMode()"
+        ></i>
+      </a>
+
+    </li>
+  </ul>
+
+</nav> -->
+ <nav class="flex w-fill h-24 bg-blue-700 justify-between px-4 items-center">
+  <div>
+    <span>
+      <h1 class="text-xl sm:text-2xl">TaskFlow</h1>
+    </span>
+  </div>
+  <div>
+    <ul class="sm:flex hidden px-4">
+      <li> <a routerLink="/notes" routerLinkActive="active"
+        ><i class="fa-solid fa-note-sticky pr-1 px-4"></i>Notes</a
+      ></li>
+      <li> <a routerLink="/reminder" routerLinkActive="active"
+        ><i class="fa-regular fa-bell pr-1 px-4"></i>Reminder</a
+      ></li>
+      <li>  <a routerLink="/archieve" routerLinkActive="active"
+        ><i class="fa-solid fa-box-archive pr-1 px-4 "></i>Archieves</a
+      ></li>
+      <li> <a href="#">
+        <i
+          class="fa-solid fa-circle-half-stroke fa-xl cursor-pointer  px-4"
+          (click)="toggleDarkMode()"
+        ></i>
+      </a></li>
     </ul>
- 
-</nav>
+  </div>
+</nav> 
