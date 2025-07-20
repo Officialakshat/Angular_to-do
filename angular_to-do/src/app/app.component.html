@@ -1,12 +1,12 @@
-<div class="main_container w-full flex ">
-    <div class="sidebar w-full sm:w-56 sm:h-screen bg-red-500 ">
+<div class="main_container  flex ">
+    <div class="sidebar sm:w-[15%] w-full sm:fixed sm:h-screen bg-slate-200 ">
    
    <app-header></app-header>
       
     </div>
-    <div class="main_area ">
-    <app-main-area></app-main-area>
-     
+    <div class="main_area sm:w-[85%] ">
+    <!-- <app-main-area></app-main-area> -->
+     <app-todo></app-todo>
     </div>
 </div>
   <router-outlet></router-outlet>

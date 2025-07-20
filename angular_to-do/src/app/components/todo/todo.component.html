@@ -1,4 +1,4 @@
-<div class="flex justify-center w-screen mt-16 items-center px-6">
+<div class="flex justify-center  mt-16 items-center px-6 sm:px-40">
   <input
     class="outline-0 mt-6  w-[100%]  text-slate-400 bg-slate-200 shadow-xl rounded-l-4xl pl-4 h-12"
     [(ngModel)]="newTask"
@@ -12,7 +12,7 @@
   </button>
 </div>
 <div class="flex justify-center mt-10">
-  <ul class="w-full mx-6">
+  <ul class="w-full mx-6 sm:mx-40">
     <li
       *ngFor="let task of tasks; let i = index"
       class="flex justify-center my-4"
