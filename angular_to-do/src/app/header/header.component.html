@@ -32,7 +32,7 @@
   </ul>
 
 </nav> -->
- <nav class="flex  w-full h-24 bg-slate-200 justify-between px-4 items-center">
+ <nav class="flex sm:flex-col w-full h-24 bg-slate-200 justify-between px-4 items-center">
   <div>
     <h1 class="text-xl sm:text-2xl text-orange-500 font-bold underline-offset-8 underline">TaskFlow</h1>
   </div>
@@ -52,8 +52,8 @@
     </div>
   </div>
   <!-- Horizontal Menu for medium and larger screens -->
-  <div class="hidden sm:flex px-4">
-    <ul class="flex gap-6 items-center">
+  <div class="hidden sm:flex sm:pt-28 px-4">
+    <ul class="flex sm:flex-col gap-6 items-center">
       <li><a routerLink="/notes" routerLinkActive="active"><i class="fa-solid fa-note-sticky pr-1"></i>Notes</a></li>
       <li><a routerLink="/reminder" routerLinkActive="active"><i class="fa-regular fa-bell pr-1"></i>Reminder</a></li>
       <li><a routerLink="/archieve" routerLinkActive="active"><i class="fa-solid fa-box-archive pr-1"></i>Archieves</a></li>
