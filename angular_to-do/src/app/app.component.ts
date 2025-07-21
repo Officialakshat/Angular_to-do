@@ -10,7 +10,7 @@ import { MainAreaComponent } from './components/main-area/main-area.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent,  TodoComponent, ],
+  imports: [RouterOutlet, HeaderComponent,  ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
