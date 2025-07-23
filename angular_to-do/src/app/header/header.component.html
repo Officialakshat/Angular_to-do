@@ -32,23 +32,18 @@
   </ul>
 
 </nav> -->
-<nav class="flex w-full h-24 bg-slate-200 items-center px-4">
-  <!-- Logo -->
-  <div class="flex-shrink-0">
-    <h1 class="text-xl sm:text-3xl text-orange-500 font-bold underline-offset-8 underline">
+<nav
+  class="flex sm:flex-col w-full h-24 bg-slate-200  justify-between py-10 px-4 items-center"
+>
+  <div>
+    <h1
+      class="text-xl sm:text-3xl text-orange-500 font-bold underline-offset-8 underline"
+    >
       TaskFlow
     </h1>
   </div>
-  <!-- Search Bar: Hidden on small, centered on md+ -->
-  <div class="hidden sm:flex flex-1 justify-center">
-    <input
-      type="text"
-      placeholder="Search..."
-      class="w-80 px-4 py-2 rounded-lg border border-slate-300 focus:outline-none"
-    />
-  </div>
   <!-- Hamburger Icon for small screens -->
-  <div class="sm:hidden ml-auto">
+  <div class="sm:hidden">
     <button (click)="showMenu = !showMenu" class="focus:outline-none">
       <i class="fa-solid fa-bars fa-2xl"></i>
     </button>
@@ -85,14 +80,14 @@
     </div>
   </div>
   <!-- Horizontal Menu for medium and larger screens -->
-  <div class="hidden sm:flex px-4">
-    <ul class="flex gap-6 items-center">
+  <div class="hidden sm:flex sm:pt-28 px-4">
+    <ul class="flex sm:flex-col gap-6 ">
       <li>
         <a routerLink="/notes" routerLinkActive="active"
           ><i class="fa-solid fa-note-sticky pr-1"></i>Notes</a
         >
       </li>
-      <li>
+      <li class="">
         <a class="flex items-center" routerLink="/reminder" routerLinkActive="active"
           ><i class="fa-regular fa-bell pr-1"></i>Reminder</a
         >
@@ -101,14 +96,6 @@
         <a class="flex items-center" routerLink="/archieve" routerLinkActive="active"
           ><i class="fa-solid fa-box-archive pr-1"></i>Archieves</a
         >
-      </li>
-      <li>
-        <a href="#"
-          ><i
-            class="fa-solid fa-circle-half-stroke fa-xl cursor-pointer"
-            (click)="toggleDarkMode()"
-          ></i
-        ></a>
       </li>
     </ul>
   </div>
